@@ -30,18 +30,20 @@ export class LoginComponent implements OnInit{
   ){}
 
   ngOnInit(): void {
+    //Set form and validate variables
     this.loginForm = this.formBuilder.group({
       userName: [null, [Validators.required]],
       password: [null, [Validators.required]]
-    })
+    });
     if (isPlatformBrowser(this.platformId)) {
       
     }
   }
+  //Submit to login
   onSubmit(): void {
     this.ngxService.start();
     var formData = this.loginForm.value;
-    var loginData = {
+    var loginData = {//set login variables
       userName: formData.userName,
       password: formData.password
     }
@@ -69,7 +71,7 @@ export class LoginComponent implements OnInit{
         this.router.navigate(['/user'])
       }
 
-    }, (error) => {
+    }, (error) => {//Check if there is an error
       this.ngxService.stop();
       console.log(error);
       this.snackbar.open("Ann error occored", "X", {

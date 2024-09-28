@@ -22,6 +22,7 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       
+      //Check if jwtToken is available
       if (this.userAuthService.getToken() != null) {
         const role = route.data["roles"] as Array<string>;
 
@@ -36,6 +37,7 @@ export class AuthGuard implements CanActivate {
           }
         }
       }
+      //Redirect the user to login page
       this.router.navigate(['/login']);
       return false;
   }

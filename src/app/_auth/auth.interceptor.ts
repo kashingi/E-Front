@@ -23,7 +23,10 @@ export class AuthInterceptor implements HttpInterceptor {
 
         const token = this.userAuthService.getToken();
 
-        req = this.addtoken(req, token);
+
+        if (token) {
+            req = this.addtoken(req, token);
+        }
 
         return next.handle(req).pipe(
             catchError((err: HttpResponse<any>) => {
@@ -38,6 +41,7 @@ export class AuthInterceptor implements HttpInterceptor {
         );
     }
 
+    //If jwtToken is missing, add it to the header
     private addtoken(request: HttpRequest<any>, token: any) {
         return request.clone({
             setHeaders: {

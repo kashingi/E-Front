@@ -23,8 +23,10 @@
                         <span *ngIf="loginForm.controls.password.errors.required">This field is mandatory</span>
                     </mat-error>
                   </mat-form-field>
-               
-                <button mat-raised-button color="primary" color="primary" (click)="onSubmit()" [disabled]="loginForm.invalid" class="float-end">Login</button>
+               <a routerLink="/register">Create Account</a>
+                <button mat-raised-button color="primary" color="primary" (click)="onSubmit()" [disabled]="loginForm.invalid" class="float-end">
+                    <mat-icon>login</mat-icon> Login
+                </button>
             </form>
         </div>
     </div>

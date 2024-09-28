@@ -7,6 +7,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 
 
@@ -23,7 +28,11 @@ import { RouterModule } from "@angular/router";
         ReactiveFormsModule,
         FormsModule,
         HttpClientModule,
-        RouterModule
+        RouterModule,
+        MatToolbarModule,
+        MatGridListModule,
+        MatTableModule,
+        MatDialogModule
     ]
 })
 

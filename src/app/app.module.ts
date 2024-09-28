@@ -19,6 +19,33 @@ import { AuthGuard } from './_auth/auth.guard';
 import { AuthInterceptor } from './_auth/auth.interceptor';
 import { UserService } from './services/user.service';
 import { UserAuthService } from './services/user-auth.service';
+import { AddProductComponent } from './add-product/add-product.component';
+import { DragDirective } from './drag.directive';
+import { ViewProductComponent } from './view-product/view-product.component';
+import { ShowImagesComponent } from './show-images/show-images.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { BuyProductComponent } from './buy-product/buy-product.component';
+import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
+import { RegisterComponent } from './register/register.component';
+import { StepperComponent } from './stepper/stepper.component';
+import { MatStepperModule } from '@angular/material/stepper';
+import { AsyncPipe } from '@angular/common';
+import { StepperTestComponent } from './stepper-test/stepper-test.component';
+import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatIconModule } from '@angular/material/icon';
+import { CartComponent } from './cart/cart.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { OrdersComponent } from './orders/orders.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+
+
+
+
+
 
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
@@ -40,13 +67,36 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     UserComponent,
     LoginComponent,
     HeaderComponent,
-    ForbiddenComponent
+    ForbiddenComponent,
+    AddProductComponent,
+    DragDirective,
+    ViewProductComponent,
+    ShowImagesComponent,
+    ProductDetailsComponent,
+    BuyProductComponent,
+    OrderConfirmationComponent,
+    RegisterComponent,
+    StepperComponent,
+    StepperTestComponent,
+    CartComponent,
+    OrdersComponent,
+    AdminOrdersComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatCardModule,
     Shared,
+    MatStepperModule,
+    AsyncPipe,
+    MatOptionModule,
+    MatRadioModule,
+    MatIconModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatButtonToggleModule,
+    MatTooltipModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig)
   ],
   providers: [
